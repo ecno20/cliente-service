@@ -6,8 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ClienteServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @org.springframework.boot.test.mock.mockito.MockBean
+    private veterinaria.tienda.vet.clienteservice.service.EstadoService estadoService;
 
+    @Test
+    void contextLoads() { }
 }
