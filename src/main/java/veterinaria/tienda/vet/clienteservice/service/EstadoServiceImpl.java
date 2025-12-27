@@ -2,25 +2,27 @@ package veterinaria.tienda.vet.clienteservice.service;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import veterinaria.tienda.vet.clienteservice.domain.Estado;
 import veterinaria.tienda.vet.clienteservice.repository.EstadoRepository;
 
+@Service
 public class EstadoServiceImpl implements EstadoService {
-	@Autowired
-	private EstadoRepository estadoRepository;
 
-	@Override
-	public Estado actualizarEstado(String id, Estado estado) {
-		Optional<Estado> estadoExistente = estadoRepository.findById(id);
-		if (estadoExistente.isPresent()) {
-			Estado estadoActualizar = estadoExistente.get();
-			estadoActualizar.setNombre(estado.getNombre());
-			estadoRepository.save(estadoActualizar);
-			return estadoActualizar;
-		}
-		return null;
+    private final EstadoRepository estadoRepository;
 
-}
+    public EstadoServiceImpl(EstadoRepository estadoRepository) {
+        this.estadoRepository = estadoRepository;
+    }
+
+    @Override
+    public Estado actualizarEstado(String id, Estado estado) {
+        return estadoRepository.findById(id)
+            .map(e -> {
+                e.setNombre(estado.getNombre());
+                return estadoRepository.save(e);
+            })
+            .orElse(null); // o lanzar excepción si lo prefieres
+    }
 }
