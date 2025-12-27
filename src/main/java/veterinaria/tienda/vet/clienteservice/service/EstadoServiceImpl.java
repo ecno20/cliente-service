@@ -23,6 +23,6 @@ public class EstadoServiceImpl implements EstadoService {
                 e.setNombre(estado.getNombre());
                 return estadoRepository.save(e);
             })
-            .orElse(null); // o lanzar excepción si lo prefieres
+            .orElse(null); // destinado a lanzar excepción
     }
 }
