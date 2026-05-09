@@ -6,3 +6,5 @@ Implementation of cliente microservice for the vet application. The cliente micr
 - Nombre
 - Dirección
 - email
+
+[![CI Caller](https://github.com/ecno20/cliente-service/actions/workflows/ci.yml/badge.svg)](https://github.com/ecno20/cliente-service/actions/workflows/ci.yml)
