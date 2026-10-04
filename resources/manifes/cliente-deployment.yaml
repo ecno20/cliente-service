@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cliente-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cliente-service
+  template:
+    metadata:
+      labels:
+        app: cliente-service
+    spec:
+      containers:
+        - name: cliente-service-container
+          image: ecno20/cliente-service:1.0.0
+          ports:
+            - containerPort: 8080
