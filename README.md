@@ -12,3 +12,8 @@ Implementation of cliente microservice for the vet application. The cliente micr
 ## Ci-Caller-->rollback
 
 [![CI Caller](https://github.com/ecno20/cliente-service/actions/workflows/ci.yml/badge.svg)](https://github.com/ecno20/cliente-service/actions/workflows/ci.yml)
+
+
+## Ci-Caller-->Escaneo de vulnerabilidades
+
+[![CI Caller](https://github.com/ecno20/cliente-service/actions/workflows/ci.yml/badge.svg)](https://github.com/ecno20/cliente-service/actions/workflows/ci.yml)
